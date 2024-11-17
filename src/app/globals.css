@@ -58,7 +58,7 @@ body {
   @apply bg-gray w-[34px] h-[34px] flex justify-center items-center rounded-full transform hover:translate-y-[-3px] transition duration-300;
 }
 .navbar {
-  @apply flex items-center flex-col lg:flex-row gap-8 ml-auto lg:w-full w-[280px] absolute lg:static top-[80px] right-0 ease-in-out transition-transform lg:transition-none duration-500 bg-primary px-6 py-12 lg:p-0 h-screen lg:h-auto lg:bg-transparent overflow-hidden border-l border-black border-opacity-10 lg:border-0 border-t;
+  @apply flex items-center flex-col lg:flex-row gap-8 ml-auto lg:w-full w-[280px] absolute lg:static top-[80px] right-0 ease-in-out transition-transform lg:transition-none duration-500 bg-primary px-6 py-12 lg:p-0 h-screen lg:h-auto lg:bg-transparent overflow-auto	border-l border-black border-opacity-10 lg:border-0 border-t;
 }
 
 .button {
