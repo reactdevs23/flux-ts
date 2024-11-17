@@ -83,7 +83,7 @@ const DiverseOutput: React.FC = () => {
               height={492}
               src={robotImg.src}
               alt="Generated Img"
-              className="w-full h-full rounded-[24px] md:rounded-[30px] object-cover object-center origin-center transition-all cursor-pointer hover:scale-110"
+              className="w-full h-full rounded-[22px] object-cover object-center origin-center transition-all cursor-pointer hover:scale-110"
             />
           </div>
         </div>

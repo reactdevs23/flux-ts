@@ -11,7 +11,7 @@ import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import { MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
 import Slide from "./Slide"; // Importing the Slide component
-import { Autoplay, Navigation } from "swiper/modules"; // Ensure Autoplay and Navigation modules are imported
+import { Navigation } from "swiper/modules"; // Ensure Autoplay and Navigation modules are imported
 
 // Define type for the testimonial data
 interface Testimonial {
@@ -94,17 +94,12 @@ const Testimonials: React.FC = () => {
 
       {/* Single Swiper for Testimonials */}
       <Swiper
-        modules={[Navigation, Autoplay]} // Add both modules
+        modules={[Navigation]} // Add both modules
         onSlideChange={handleSlideChange} // Handle slide change
         loop={true}
         slidesPerView={2.2}
         centeredSlides={true}
         spaceBetween={30}
-        autoplay={{
-          delay: 2500,
-          pauseOnMouseEnter: true, // Pause autoplay on hover
-          disableOnInteraction: false, // Ensures autoplay doesn't disable after interaction
-        }}
         breakpoints={{
           1024: {
             slidesPerView: 1.8,

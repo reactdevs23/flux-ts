@@ -44,7 +44,7 @@ const HeroSection = () => {
               width={800}
               height={500}
               alt={image.alt}
-              className="w-full h-full rounded-2xl object-cover object-center origin-center transition-transform duration-500 cursor-pointer hover:scale-110"
+              className="w-full h-full rounded-2xl object-cover object-center origin-center transition-transform duration-500 cursor-pointer hover:scale-110 rounded-[15px]"
             />
           </div>
         ))}
