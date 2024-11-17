@@ -6,7 +6,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import Card from "./Card";
 
 // Define the data item type
@@ -64,7 +64,11 @@ const DiverseOutput: React.FC = () => {
               slidesPerView={1}
               spaceBetween={16}
               pagination={{ clickable: true }}
-              modules={[Pagination]}
+              modules={[Pagination, Autoplay]}
+              autoplay={{
+                delay: 2500,
+                pauseOnMouseEnter: true,
+              }}
             >
               {data.map((el, i) => (
                 <SwiperSlide key={i}>

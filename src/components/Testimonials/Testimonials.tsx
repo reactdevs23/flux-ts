@@ -4,13 +4,14 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/autoplay"; // Import the autoplay CSS
 
 import { amenda, shape } from "@/images"; // Assuming these are correctly imported from your assets
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import { MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
 import Slide from "./Slide"; // Importing the Slide component
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules"; // Ensure Autoplay and Navigation modules are imported
 
 // Define type for the testimonial data
 interface Testimonial {
@@ -91,13 +92,19 @@ const Testimonials: React.FC = () => {
         </div>
       </div>
 
+      {/* Single Swiper for Testimonials */}
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]} // Add both modules
         onSlideChange={handleSlideChange} // Handle slide change
         loop={true}
         slidesPerView={2.2}
         centeredSlides={true}
         spaceBetween={30}
+        autoplay={{
+          delay: 2500,
+          pauseOnMouseEnter: true, // Pause autoplay on hover
+          disableOnInteraction: false, // Ensures autoplay doesn't disable after interaction
+        }}
         breakpoints={{
           1024: {
             slidesPerView: 1.8,
