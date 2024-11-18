@@ -1,15 +1,22 @@
+"use client";
+import React, { useEffect, useRef, useContext } from "react";
 import { car, ocean, spaceShip, doll, girl } from "@/images";
 import Image from "next/image";
-import React from "react";
+import { AppContext } from "@/app/Provider";
 
-// Define the type for image objects
-type ImageType = {
+// Type definition for the image array
+interface ImageType {
   src: string;
   alt: string;
-};
+}
 
-const HeroSection = () => {
-  // Create an array of images with the defined type
+const HeroSection: React.FC = () => {
+  const { setShowGenerateButton } = useContext(AppContext) || {
+    setShowGenerateButton: () => {},
+  };
+  const generateButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  // Image data with types
   const images: ImageType[] = [
     { src: car.src, alt: "Car" },
     { src: spaceShip.src, alt: "Space Ship" },
@@ -18,9 +25,27 @@ const HeroSection = () => {
     { src: ocean.src, alt: "Ocean" },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (generateButtonRef.current) {
+        const rect = generateButtonRef.current.getBoundingClientRect();
+        const navbarHeight = 70; // Adjust according to your navbar's actual height
+        const offset = navbarHeight + 10; // Add extra margin for better control
+
+        const isInView =
+          rect.top >= offset && rect.bottom <= window.innerHeight - offset;
+
+        setShowGenerateButton(!isInView); // Show button only when out of view
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [setShowGenerateButton]);
+
   return (
     <section className="bg-primary-gradient relative z-10 pt-32 lg:pt-48 pb-12 md:pb-20 flex flex-col gap-16 w-full">
-      <div className="mx-auto max-w-[850px] flex flex-col gap-6 xl:gap-10 container">
+      <div className="mx-auto max-w-[850px] flex flex-col gap-6 xl:gap-10 w-11/12	">
         <h1 className="heading text-center">
           FLUX.1: Revolutionary AI Image Generation
         </h1>
@@ -29,7 +54,10 @@ const HeroSection = () => {
           Unleash your creativity and experience unparalleled freedom in image
           creation.
         </p>
-        <button className="button">Generate Now</button>
+
+        <button ref={generateButtonRef} className="button mx-auto">
+          Generate Now
+        </button>
       </div>
       <div className="grid grid-cols-2 grid-rows-1 sm:grid-cols-7 gap-2 sm:gap-4 w-full container">
         {images.map((image, index) => (

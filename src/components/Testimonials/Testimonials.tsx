@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay"; // Import the autoplay CSS
 
-import { amenda, shape } from "@/images"; // Assuming these are correctly imported from your assets
+import { amenda, avatar2, avatar3, avatar4, avatar5, shape } from "@/images"; // Assuming these are correctly imported from your assets
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import { MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
@@ -38,25 +38,32 @@ const Testimonials: React.FC = () => {
         "I have been looking everywhere and have settled on Upscayl. It's free, which is a definite bonus, but it also seems better than all the paid ones I tried the trial of!",
     },
     {
-      img: amenda,
+      img: avatar2,
       name: "John",
       country: "Canada",
       feedback:
-        "Fantastic service, I’m amazed at how much better the quality is compared to other services.",
+        "I have been looking everywhere and have settled on Upscayl. It's free, which is a definite bonus, but it also seems better than all the paid ones I tried the trial of!",
     },
     {
-      img: amenda,
+      img: avatar3,
       name: "Sophia",
       country: "United Kingdom",
       feedback:
-        "It’s truly a game-changer. I’ve never seen something this effective and free.",
+        "I have been looking everywhere and have settled on Upscayl. It's free, which is a definite bonus, but it also seems better than all the paid ones I tried the trial of!",
     },
     {
-      img: amenda,
+      img: avatar4,
       name: "Liam",
       country: "Australia",
       feedback:
-        "Highly recommended! Easy to use, and does exactly what it promises.",
+        "I have been looking everywhere and have settled on Upscayl. It's free, which is a definite bonus, but it also seems better than all the paid ones I tried the trial of!",
+    },
+    {
+      img: avatar5,
+      name: "Sarah",
+      country: "Australia",
+      feedback:
+        "I have been looking everywhere and have settled on Upscayl. It's free, which is a definite bonus, but it also seems better than all the paid ones I tried the trial of!",
     },
   ];
 
@@ -130,13 +137,13 @@ const Testimonials: React.FC = () => {
           className="arrowButton"
           onClick={() => swiperRef.current?.swiper.slidePrev()}
         >
-          <MdOutlineChevronLeft className="text-black text-xl" />
+          <MdOutlineChevronLeft className="text-black hover:text-green text-xl" />
         </button>
         <button
           className="arrowButton"
           onClick={() => swiperRef.current?.swiper.slideNext()}
         >
-          <MdOutlineChevronRight className="text-black text-xl" />
+          <MdOutlineChevronRight className="text-black hover:text-green text-xl" />
         </button>
       </div>
     </div>

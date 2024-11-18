@@ -55,14 +55,15 @@ body {
   @apply text-base md:text-xl text-black;
 }
 .arrowButton {
-  @apply bg-gray w-[34px] h-[34px] flex justify-center items-center rounded-full transform hover:translate-y-[-3px] transition duration-300;
+  @apply hover:text-green bg-gray w-[34px] h-[34px] flex justify-center items-center rounded-full  transition duration-300;
+  background: rgba(217, 217, 217, 0.3);
 }
 .navbar {
-  @apply flex items-center flex-col lg:flex-row gap-8 ml-auto lg:w-full w-[280px] absolute lg:static top-[80px] right-0 ease-in-out transition-transform lg:transition-none duration-500 bg-primary px-6 py-12 lg:p-0 h-screen lg:h-auto lg:bg-transparent overflow-auto	border-l border-black border-opacity-10 lg:border-0 border-t;
+  @apply flex items-center flex-col lg:flex-row gap-6 xl:gap-8 mx-auto lg:w-full w-[280px] absolute lg:static top-[80px] right-0 ease-in-out transition-transform lg:transition-none duration-500 bg-primary px-6 py-12 lg:p-0 h-screen lg:h-auto lg:bg-transparent overflow-auto	 border-l border-black border-opacity-10 lg:border-0 border-t;
 }
 
 .button {
-  @apply max-w-[209px] hover:opacity-80 transition duration-500 transform hover:translate-y-[-3px] py-3 px-4 md:p-4 mx-auto block w-full bg-black border-green border-solid	border-2 rounded-lg	 text-white text-base font-bold;
+  @apply max-w-[209px] hover:opacity-80 transition duration-500 transform hover:translate-y-[-3px] py-3 px-4 md:p-4  block w-full bg-black border-[#63FFB6] border-solid	border-2 rounded-lg	 text-white text-base font-bold;
 }
 .section-spacing {
   @apply py-10 md:py-16;
@@ -132,12 +133,7 @@ body {
     padding-left: 4.22%;
   }
 }
-@media only screen and (max-width: 520px) {
-  .spacing-left {
-    padding-left: 0;
-    width: 91.22%;
-  }
-}
+
 .swiper-slide {
   height: auto !important;
   display: flex;

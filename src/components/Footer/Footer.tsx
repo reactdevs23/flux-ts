@@ -12,7 +12,7 @@ const Footer = () => {
   // Array of links to be used in the footer for future scalability
   const footerLinks: FooterLink[] = [
     { href: "#", text: "Privacy Policy" },
-    { href: "#", text: "Terms of Service" }, // Add more links as needed
+    { href: "#", text: "Terms & Conditions" }, // Add more links as needed
   ];
 
   return (
@@ -34,7 +34,7 @@ const Footer = () => {
             href={link.href}
             target="_blank"
             rel="noreferrer"
-            className="text-sm font-medium text-black"
+            className="text-sm font-medium text-black hover:text-green"
           >
             {link.text}
           </a>

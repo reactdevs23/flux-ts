@@ -16,6 +16,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <body
+        suppressHydrationWarning={true}
         className={` antialiased bg-primary min-h-screen font-sf text-black`}
       >
         <Provider>

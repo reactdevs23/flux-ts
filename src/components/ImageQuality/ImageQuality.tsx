@@ -34,7 +34,7 @@ const PrecisePromt = () => {
   return (
     <section className="bg-black700 py-4 sm:py-6 lg:py-10">
       <section
-        className="spacing-left section-spacing screen1340:pl-auto screen1340:w-full mx-auto md:ml-auto py-32 flex flex-col gap-10 md:gap-10"
+        className="spacing-left section-spacing screen1340:pl-auto screen1340:w-full ml-auto md:ml-auto py-32 flex flex-col gap-10 md:gap-10"
         style={
           {
             "--spacing-left": `${dynamicPaddingLeft}px`,
@@ -62,18 +62,19 @@ const PrecisePromt = () => {
               slidesPerView: 2.95,
             },
             1025: {
-              slidesPerView: 1.8,
+              slidesPerView: 2.3,
               spaceBetween: 30,
             },
             768: {
-              slidesPerView: 1.4,
+              slidesPerView: 1.9,
             },
             521: {
               slidesPerView: 1.4,
               spaceBetween: 24,
             },
             281: {
-              slidesPerView: 1,
+              spaceBetween: 12,
+              slidesPerView: 1.1,
             },
           }}
           className="w-full px-4"
@@ -89,16 +90,16 @@ const PrecisePromt = () => {
         {/* Custom Navigation Buttons */}
         <div className="hidden md:flex justify-end gap-4 mx-auto max-w-[790px] w-full">
           <button
-            className="arrowButton opacity-80"
+            className="arrowButton "
             onClick={() => swiperRef.current?.swiper.slidePrev()}
           >
-            <MdOutlineChevronLeft className="text-black text-xl" />
+            <MdOutlineChevronLeft className="text-black hover:text-green text-xl" />
           </button>
           <button
-            className="arrowButton opacity-80"
+            className="arrowButton "
             onClick={() => swiperRef.current?.swiper.slideNext()}
           >
-            <MdOutlineChevronRight className="text-black text-xl" />
+            <MdOutlineChevronRight className="text-black hover:text-green text-xl" />
           </button>
         </div>
       </section>

@@ -6,6 +6,10 @@ import girl from "./girl.png";
 import spaceShip from "./space.png";
 import ocean from "./ocean.png";
 import amenda from "./amenda.png";
+import avatar2 from "./avatar2.png";
+import avatar3 from "./avatar3.png";
+import avatar4 from "./avatar4.png";
+import avatar5 from "./avatar5.png";
 import shape from "./shape.svg";
 import lavenderPath from "./lavenderPath.png";
 import sportsCar from "./sportsCar.png";
@@ -24,6 +28,10 @@ export {
   girl,
   spaceShip,
   amenda,
+  avatar2,
+  avatar3,
+  avatar4,
+  avatar5,
   shape,
   sportsCar,
   lavenderPath,
