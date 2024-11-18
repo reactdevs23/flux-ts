@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useRef, useContext } from "react";
+import React, { useContext } from "react";
 import { car, ocean, spaceShip, doll, girl } from "@/images";
 import Image from "next/image";
 import { AppContext } from "@/app/Provider";
+import { useScrollVisibility } from "@/Hook/Hook";
 
 // Type definition for the image array
 interface ImageType {
@@ -14,7 +15,7 @@ const HeroSection: React.FC = () => {
   const { setShowGenerateButton } = useContext(AppContext) || {
     setShowGenerateButton: () => {},
   };
-  const generateButtonRef = useRef<HTMLButtonElement | null>(null);
+  const generateButtonRef = useScrollVisibility(setShowGenerateButton); //
 
   // Image data with types
   const images: ImageType[] = [
@@ -24,24 +25,6 @@ const HeroSection: React.FC = () => {
     { src: doll.src, alt: "Doll" },
     { src: ocean.src, alt: "Ocean" },
   ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (generateButtonRef.current) {
-        const rect = generateButtonRef.current.getBoundingClientRect();
-        const navbarHeight = 70; // Adjust according to your navbar's actual height
-        const offset = navbarHeight + 10; // Add extra margin for better control
-
-        const isInView =
-          rect.top >= offset && rect.bottom <= window.innerHeight - offset;
-
-        setShowGenerateButton(!isInView); // Show button only when out of view
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [setShowGenerateButton]);
 
   return (
     <section className="bg-primary-gradient relative z-10 pt-32 lg:pt-48 pb-12 md:pb-20 flex flex-col gap-16 w-full">
